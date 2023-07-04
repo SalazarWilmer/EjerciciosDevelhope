@@ -1,0 +1,64 @@
+body {
+
+  font-family: Verdana,Verdana,Verdana,Verdana;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+}
+
+
+.page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgb(138, 51, 219, 0.3);
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  height: 40px;
+  
+  >a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    
+  }
+  
+}
+
+.disabled {
+  color: black;
+  opacity: 0.5;
+  font-size: 14px;
+}
+#dropdown {
+  background-color: rgb(138, 51, 219, 0);
+    border: none;
+    cursor: pointer;
+    font-family: Verdana,Verdana,Verdana,Verdana;
+    font-weight: 400px;
+    padding: 1px;
+    vertical-align: middle; 
+    font-size: 15px;
+}
+
+button {
+  
+  height: 30px;
+  border-radius: 5px;
+  background-position: center;
+  border-color: darkmagenta;
+  background-color: rgba(205, 51, 219, 0 ) ;
+}
+
+.search #search {
+  background-color:white;
+  border-color: darkmagenta;
+ height: 30px;
+  
+  border-radius: 5px;
+ 
+  font-family: Verdana,Verdana,Verdana,Verdana;
+
+}
