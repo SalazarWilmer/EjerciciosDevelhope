@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  
 
 }
 
@@ -17,7 +18,8 @@ body {
   text-align: center;
   align-items: center;
   height: 40px;
-  
+  gap: 1rem;
+  color: black;
   >a:link,
   a:visited,
   a:active {
@@ -32,24 +34,40 @@ body {
   opacity: 0.5;
   font-size: 14px;
 }
+.selector { 
+  height: 19px;
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+.disabled{
+  text-align: end;
+  justify-content: center;
+}
 #dropdown {
   background-color: rgb(138, 51, 219, 0);
     border: none;
     cursor: pointer;
     font-family: Verdana,Verdana,Verdana,Verdana;
     font-weight: 400px;
-    padding: 1px;
+    
     vertical-align: middle; 
     font-size: 15px;
+    gap: 1rem;
+    text-align: center;
+  justify-content: center;
+  position: relative;
 }
 
 button {
-  
+  color: rgb(39, 158, 10);
+  background-color: white;
   height: 30px;
   border-radius: 5px;
   background-position: center;
-  border-color: darkmagenta;
-  background-color: rgba(205, 51, 219, 0 ) ;
+  border-color: rgb(0, 0, 0);
+  transition: background-color .5s;
 }
 
 .search #search {
@@ -60,5 +78,9 @@ button {
   border-radius: 5px;
  
   font-family: Verdana,Verdana,Verdana,Verdana;
-
+  
+}
+button:hover{
+  background-color: green;
+  color: white;
 }
