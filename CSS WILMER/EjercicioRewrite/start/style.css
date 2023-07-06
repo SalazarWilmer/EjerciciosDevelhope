@@ -1,0 +1,22 @@
+
+
+
+:root{
+    --color: #011212;
+    --widthpred: 100px;
+    --heightpred: 100px;
+    --backgroundcolorpred: #ff8800;
+    --borderradiuspred: 50px;
+
+}
+
+body {
+    background-color: var( --color);
+}
+
+.ball {
+    width: var(--widthpred);
+    height: var(--heightpred);
+    background-color: var(--backgroundcolorpred);
+    border-radius: var(--borderradiuspred);
+}
