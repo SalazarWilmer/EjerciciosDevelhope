@@ -1,0 +1,49 @@
+
+$color-primary: rgb(172, 31, 31);
+$color-secundary: rgb(47, 47, 170);
+$color-tertiary: green;
+
+html{
+    height: 95%;
+    width: 97%;
+    border: 15px solid black;
+}
+body{
+  margin: 15px;
+}
+
+div {
+  border: 1px solid $color-primary;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    color: $color-tertiary;
+    text-align: center;
+    text-decoration: underline 1px $color-secundary;
+    text-underline-offset: 0.5rem;
+    margin-bottom: 15px;
+  }
+}
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: -15px;
+}
+article {
+    border: 1px solid $color-tertiary;
+    padding: 1rem;
+    text-align: center;
+    p.red{
+      color:$color-primary;
+  }
+
+    p.blue{
+        color:$color-secundary;
+    }
+  }
+    

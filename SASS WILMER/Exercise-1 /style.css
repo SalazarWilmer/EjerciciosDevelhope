@@ -1,0 +1,38 @@
+html {
+  height: 95%;
+  width: 97%;
+  border: 15px solid black; }
+
+body {
+  margin: 15px; }
+
+div {
+  border: 1px solid #ac1f1f;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  div h1 {
+    color: green;
+    text-align: center;
+    text-decoration: underline 1px #2f2faa;
+    text-underline-offset: 0.5rem;
+    margin-bottom: 15px; }
+
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: -15px; }
+
+article {
+  border: 1px solid green;
+  padding: 1rem;
+  text-align: center; }
+  article p.red {
+    color: #ac1f1f; }
+  article p.blue {
+    color: #2f2faa; }
+
+/*# sourceMappingURL=style.css.map */
