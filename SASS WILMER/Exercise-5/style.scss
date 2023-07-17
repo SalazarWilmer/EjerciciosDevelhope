@@ -1,0 +1,111 @@
+@import "functions";
+@use "sass:color";
+
+$primary: rgb(172, 31, 31);
+$secundary: rgb(47, 47, 170);
+$ternary: green;
+$color-text: #ffffff;
+$base-color: #000000;
+
+@mixin article-card($color, $border-color, $font-size) {
+  color: $color;
+  border-color: $border-color;
+  font-size: $font-size;
+}
+
+body {
+  display: flex;
+}
+
+
+div {
+  border: pxToRem(1) solid $primary;
+  display: flex;
+  margin: pxToRem(5);
+  padding: pxToRem(5);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+
+  %text {
+    text-align: center;
+    color: $ternary;
+  }
+  h1 {
+    text-align: center;
+    color: $ternary;
+    text-decoration: underline pxToRem(1) $secundary;
+    text-underline-offset: 0.5rem;
+    @extend %text;
+  }
+  h2 {
+    @extend %text;
+    border: 1px solid $primary;
+    padding: pxToRem(16);
+   
+  }
+}
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: pxToRem(-15);
+  width: 95%;
+  
+
+  article {
+    border: pxToRem(1) solid $ternary;
+    padding: 1rem;
+    text-align: center;
+    justify-content: space-between;
+  }
+}
+.s1{
+    gap: pxToRem(16);
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+    
+}
+
+@each $size in (1, 2, 3) {
+    .fs-#{$size}rem {
+      font-size: $size + rem;
+      width: pxToRem(45);
+      height: pxToRem(45);
+    }
+  }
+  
+  @for $i from 1 through 20 {
+    $box-color: darken($color-text, $i * 5);
+    $box-color-text: lighten($base-color, $i * 5);
+    .box-#{$i} {
+      background-color: $box-color;
+      color: $box-color-text;
+      @if $i == 10 {
+        background-color: $secundary;
+        color: $primary;
+        justify-content: start;
+        align-items: start;
+        font-weight: bold;
+      }
+    }
+  }
+  .fs-1rem,
+  .fs-2rem {
+    justify-content: start;
+    align-items: start;
+  }
+.blue {
+  @include article-card($secundary, $ternary, 1rem);
+}
+.red {
+  @include article-card($primary, $ternary, 1rem);
+}
+.green {
+  @include article-card($ternary, $secundary, pxToRem(24));
+  flex: 1;
+}

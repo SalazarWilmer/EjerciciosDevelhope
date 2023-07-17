@@ -1,0 +1,166 @@
+@use 'sass:math';
+@use "sass:color";
+body {
+  display: flex; }
+
+div {
+  border: 0.0625rem solid #ac1f1f;
+  display: flex;
+  margin: 0.3125rem;
+  padding: 0.3125rem;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap; }
+  div h1, div h2 {
+    text-align: center;
+    color: green; }
+  div h1 {
+    text-align: center;
+    color: green;
+    text-decoration: underline 0.0625rem #2f2faa;
+    text-underline-offset: 0.5rem; }
+  div h2 {
+    border: 1px solid #ac1f1f;
+    padding: 1rem; }
+
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: -0.9375rem;
+  width: 95%; }
+  section article {
+    border: 0.0625rem solid green;
+    padding: 1rem;
+    text-align: center;
+    justify-content: space-between; }
+
+.s1 {
+  gap: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.fs-1rem {
+  font-size: 1rem;
+  width: 2.8125rem;
+  height: 2.8125rem; }
+
+.fs-2rem {
+  font-size: 2rem;
+  width: 2.8125rem;
+  height: 2.8125rem; }
+
+.fs-3rem {
+  font-size: 3rem;
+  width: 2.8125rem;
+  height: 2.8125rem; }
+
+.box-1 {
+  background-color: #f2f2f2;
+  color: #0d0d0d; }
+
+.box-2 {
+  background-color: #e6e6e6;
+  color: #1a1a1a; }
+
+.box-3 {
+  background-color: #d9d9d9;
+  color: #262626; }
+
+.box-4 {
+  background-color: #cccccc;
+  color: #333333; }
+
+.box-5 {
+  background-color: #bfbfbf;
+  color: #404040; }
+
+.box-6 {
+  background-color: #b3b3b3;
+  color: #4d4d4d; }
+
+.box-7 {
+  background-color: #a6a6a6;
+  color: #595959; }
+
+.box-8 {
+  background-color: #999999;
+  color: #666666; }
+
+.box-9 {
+  background-color: #8c8c8c;
+  color: #737373; }
+
+.box-10 {
+  background-color: gray;
+  color: gray;
+  background-color: #2f2faa;
+  color: #ac1f1f;
+  justify-content: start;
+  align-items: start;
+  font-weight: bold; }
+
+.box-11 {
+  background-color: #737373;
+  color: #8c8c8c; }
+
+.box-12 {
+  background-color: #666666;
+  color: #999999; }
+
+.box-13 {
+  background-color: #595959;
+  color: #a6a6a6; }
+
+.box-14 {
+  background-color: #4d4d4d;
+  color: #b3b3b3; }
+
+.box-15 {
+  background-color: #404040;
+  color: #bfbfbf; }
+
+.box-16 {
+  background-color: #333333;
+  color: #cccccc; }
+
+.box-17 {
+  background-color: #262626;
+  color: #d9d9d9; }
+
+.box-18 {
+  background-color: #1a1a1a;
+  color: #e6e6e6; }
+
+.box-19 {
+  background-color: #0d0d0d;
+  color: #f2f2f2; }
+
+.box-20 {
+  background-color: black;
+  color: white; }
+
+.fs-1rem,
+.fs-2rem {
+  justify-content: start;
+  align-items: start; }
+
+.blue {
+  color: #2f2faa;
+  border-color: green;
+  font-size: 1rem; }
+
+.red {
+  color: #ac1f1f;
+  border-color: green;
+  font-size: 1rem; }
+
+.green {
+  color: green;
+  border-color: #2f2faa;
+  font-size: 1.5rem;
+  flex: 1; }
+
+/*# sourceMappingURL=style.css.map */
