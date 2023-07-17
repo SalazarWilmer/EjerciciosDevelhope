@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+@function pxToRem($pixels) {
+    @return #{$pixels / 16}rem;
+  };
+
+
+  

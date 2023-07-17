@@ -1,0 +1,61 @@
+@import "functions";
+@use "sass:color";
+
+$primary: rgb(172, 31, 31);
+$secundary: rgb(47, 47, 170); 
+$ternary: green;
+
+@mixin article-card($color, $border-color, $font-size) {
+  color: $color;
+  border-color: $border-color;
+  font-size: $font-size;
+}
+
+
+html{
+    height: 95%;
+    width: 97%;
+    border: pxToRem(15) solid black;
+    
+}
+
+div {
+  border: pxToRem(1) solid $primary;
+  display: block;
+  margin: pxToRem(5);
+  padding: pxToRem(5);
+  background-color: white;
+  h1 {
+    text-align: center;
+    color: $ternary;
+    text-decoration: underline pxToRem(1) $secundary;
+    text-underline-offset: 0.5rem;
+    margin-bottom: pxToRem(15);
+  }
+}
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: pxToRem(-15);
+  article {
+    border: pxToRem(1) solid $ternary;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+.blue{
+    @include article-card($secundary, $ternary, 1rem);
+}
+.red{
+    @include article-card($primary, $ternary, 1rem);
+}
+.green{
+    @include article-card($ternary, $secundary, pxToRem(24));
+    flex:1;
+}
+
+// no me funciona el @use con functions, solo como modulo en mi archivo sass,
+// estuve investigando y no consigo un porque.
+// subire el archivo asi y en cuanto descubra el porque lo resubo al repo
+//al final instale dart a ver si era mi problema de porque no leia el @use y nada, seguire adelante, se como funciona el @use junto con @foward pero no me funciona en mi pc.
+

@@ -1,0 +1,46 @@
+@use 'sass:math';
+@use "sass:color";
+html {
+  height: 95%;
+  width: 97%;
+  border: 0.9375rem solid black; }
+
+div {
+  border: 0.0625rem solid #ac1f1f;
+  display: block;
+  margin: 0.3125rem;
+  padding: 0.3125rem;
+  background-color: white; }
+  div h1 {
+    text-align: center;
+    color: green;
+    text-decoration: underline 0.0625rem #2f2faa;
+    text-underline-offset: 0.5rem;
+    margin-bottom: 0.9375rem; }
+
+section {
+  display: flex;
+  padding: 1rem;
+  margin-top: -0.9375rem; }
+  section article {
+    border: 0.0625rem solid green;
+    padding: 1rem;
+    text-align: center; }
+
+.blue {
+  color: #2f2faa;
+  border-color: green;
+  font-size: 1rem; }
+
+.red {
+  color: #ac1f1f;
+  border-color: green;
+  font-size: 1rem; }
+
+.green {
+  color: green;
+  border-color: #2f2faa;
+  font-size: 1.5rem;
+  flex: 1; }
+
+/*# sourceMappingURL=style.css.map */
