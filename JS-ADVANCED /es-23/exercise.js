@@ -14,10 +14,10 @@ const firstPromise = (isLogged) => {
   const secondPromise = (number) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (number > 25) {
+        if (number > 0.5) {
           resolve({ name: "John", age: 24 });
         } else {
-            resolve({ name: "Juan", age: 30 }); //agregue esto para comparar resultados
+          reject(new Error("Número menor o igual a 0.5"));
         }
       }, 2000); 
     });
