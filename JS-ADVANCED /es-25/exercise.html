@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todos List</title>
+</head>
+<body>
+  <div id="container" style="display: flex; align-items: center">
+    <h1>Todos List</h1>
+    <ul class="todo-list"></ul>
+  </div>
+
+  <script>
+    async function fetchTodosAndDisplay() {
+      const url = 'https://jsonplaceholder.typicode.com/todos';
+
+      try {
+        const response = await fetch(url);
+        const todos = await response.json();
+
+        const todoListElement = document.querySelector('.todo-list');
+
+        todos.forEach(todo => {
+          const li = document.createElement('li');
+          li.textContent = todo.title;
+          todoListElement.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Ocurrió un error:', error);
+      }
+    }
+
+    fetchTodosAndDisplay();
+  </script>
+</body>
+</html>
