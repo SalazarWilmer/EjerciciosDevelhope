@@ -1,16 +1,15 @@
 function printAsyncName(callback, name) {
-    let seg = 0;
-  
-    const intervalId = setInterval(() => {
-      if (seg === 0) {
-        callback();
-        seg++;
-      } else if (seg === 1) {
-        console.log(name);
-        clearInterval(intervalId);
-      }
-    }, 1000);
-  }
+    
+  const callbackInterval = setInterval(() => {
+    callback(); 
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(callbackInterval); 
+    console.log(name); 
+  }, 2000);
+}
+
   
   function imprimirHola() {
     console.log("Hola");
