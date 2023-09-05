@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de Solicitud POST</title>
+  </head>
+  <body>
+    <div id="container">
+      <form id="todo-form">
+        <div>
+          <label>Title</label>
+          <input type="text" id="todo-title" />
+        </div>
+        <div>
+          <label>Completed</label>
+          <input type="checkbox" id="todo-completed" />
+        </div>
+        <button type="submit" id="submit-todo">Crear Publicación</button>
+      </form>
+    </div>
+
+    <script>
+      async function createNewPost() {
+        try {
+          const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+
+          const title = document.getElementById("todo-title").value;
+          const completed = document.getElementById("todo-completed").checked;
+
+          const postData = {
+            title: title,
+            completed: completed,
+          };
+
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+
+          if (!response.ok) {
+            throw new Error("La solicitud no fue exitosa");
+          }
+
+          const newPost = await response.json();
+
+          console.log("Nueva publicación creada:", newPost);
+        } catch (error) {
+          console.error("Hubo un error:", error);
+        }
+      }
+
+      const form = document.getElementById("todo-form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        createNewPost();
+      });
+    </script>
+  </body>
+</html>
