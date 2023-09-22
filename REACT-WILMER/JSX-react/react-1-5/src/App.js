@@ -4,11 +4,17 @@ import './App.css';
 function App() {
 
   const hello = <h1>Hello, World!</h1>;
+  const diHola = (name) => {
+    return <h1>¡Hola, {name}!</h1>;
+  };
+
+  const hi = diHola('Wilmer');
+
   return (
-    <div className="App">
+    <div >
      
         {hello}
-  
+        {hi}
    
     </div>
   );
