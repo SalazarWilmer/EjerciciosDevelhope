@@ -5,7 +5,7 @@ const Welcome = (props) => {
     <div>
       <p>Welcome, {props.name || <strong>invitado</strong>}!</p>
      
-      {props.age && props.age > 18 && <Age age={props.age} />}
+      {props.age !== undefined && props.age !== null && <Age age={props.age} />}
     </div>
   );
 };
