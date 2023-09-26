@@ -4,7 +4,8 @@ const Welcome = (props) => {
   return (
     <div>
       <p>Welcome, {props.name || <strong>invitado</strong>}!</p>
-      {props.age && <Age age={props.age} />}
+     
+      {props.age && props.age > 18 && <Age age={props.age} />}
     </div>
   );
 };
@@ -16,5 +17,11 @@ const Welcome = (props) => {
 /**
  * Respuesta al ejercicio 19: Para modificar el valor de la name de string a JSX y agregarle las etiquetas
  * <strog>, solamente debemos encerrar el texto que estaba dentro de las '' y eliminar esas comillas.
+ */
+
+/**
+ * Respuesta al ejercicio 21: al modificar este componente welcome para que solo renderice el componente Age
+ * si se cumple con la condicion si es mayor de 18, agregamos esta condicion antes de llamar a nuestro componente
+ * 
  */
 export default Welcome;
