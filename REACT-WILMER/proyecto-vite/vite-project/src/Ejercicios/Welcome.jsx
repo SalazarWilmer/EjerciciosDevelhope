@@ -1,23 +1,16 @@
-import React from 'react';
+import Age from "./Age";
 
 const Welcome = (props) => {
   return (
     <div>
-    <p>
-      Welcome, {props.name || <strong>guest</strong>}!
-    </p>
-    {props.age && (
-      <p>
-        Your age is {props.age}.
-      </p>
-    )}
-  </div>
-  )}
+      <p>Welcome, {props.name || <strong>invitado</strong>}!</p>
+      {props.age && <Age age={props.age} />}
+    </div>
+  );
+};
 
-
-
-/**Respuesta al ejercicio 17 de props: Como podemos observar si se puede establecer 
- * un valor predeterminado si no se proporciona el nombre en la variable name, de lo contrario el valor que 
+/**Respuesta al ejercicio 17 de props: Como podemos observar si se puede establecer
+ * un valor predeterminado si no se proporciona el nombre en la variable name, de lo contrario el valor que
  * mostraria la variable seria undefined */
 
 /**
