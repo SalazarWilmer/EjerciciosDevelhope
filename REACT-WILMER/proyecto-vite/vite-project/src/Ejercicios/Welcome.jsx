@@ -8,6 +8,7 @@ const Welcome = (props) => {
     <div>
       <p>Welcome, {props.name || <strong>invitado</strong>}!</p>
      
+     
       {isAgeValid && <Age age={props.age} />}
     </div>
   );
