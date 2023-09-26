@@ -8,7 +8,7 @@ function App() {
       <Hello />
       <Message />
       <Hello />
-      <Welcome name={<strong>Wilmer</strong>} age={16} />
+      <Welcome name={<strong>Wilmer</strong>} />
     </div>
   );
 }

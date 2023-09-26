@@ -1,11 +1,14 @@
 import Age from "./Age";
 
 const Welcome = (props) => {
+  const isAgeValid = props.age > 18 && props.age < 65;
+  console.log(isAgeValid);
+  
   return (
     <div>
       <p>Welcome, {props.name || <strong>invitado</strong>}!</p>
      
-      {props.age !== undefined && props.age !== null && <Age age={props.age} />}
+      {isAgeValid && <Age age={props.age} />}
     </div>
   );
 };
