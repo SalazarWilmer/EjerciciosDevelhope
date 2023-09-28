@@ -7,6 +7,7 @@ const MouseClicker = ({ name }) => {
 
   return (
     <button name={name} onClick={handleClick}>
+      <img src="1.jpg" alt="pics" />
       {name}
     </button>
   );
