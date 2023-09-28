@@ -5,6 +5,7 @@ import Age from "./Ejercicios/Age";
 import AlertClock from "./Ejercicios/AlertClock";
 import Counter from "./Ejercicios/Counter";
 import Clock from "./Ejercicios/Clock";
+import MouseClicker from "./Ejercicios/MouseClicker";
 function App() {
   const initialValue = 0;
   const incrementAmount = 5;
@@ -24,6 +25,7 @@ function App() {
       <AlertClock onClickHandler={handleAlertClick} />
       <Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount}  />
       <Clock />
+      <MouseClicker name="one" />
     </div>
   );
 }
