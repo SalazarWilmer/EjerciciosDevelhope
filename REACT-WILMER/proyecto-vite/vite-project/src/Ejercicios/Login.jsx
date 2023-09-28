@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
@@ -15,6 +15,12 @@ const Login = () => {
 
   const handleRememberChange = (event) => {
     setRemember(event.target.checked);
+  };
+
+  const handleLogin = () => {
+    if (username && password) {
+      onLogin({ username, password, remember });
+    }
   };
 
   return (
@@ -47,6 +53,12 @@ const Login = () => {
           Remember Me
         </label>
       </div>
+      <button
+        onClick={handleLogin}
+        disabled={!username || !password}
+      >
+        Login
+      </button>
     </div>
   );
 };
