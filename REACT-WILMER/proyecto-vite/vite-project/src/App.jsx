@@ -12,7 +12,7 @@ function App() {
       <Hello />
       <Age age={10} />
       <Welcome name={name} age={26}/>
-     
+      <AlertClock />
     </div>
   );
 }
