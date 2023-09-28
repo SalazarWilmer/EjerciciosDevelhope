@@ -14,7 +14,9 @@ const handleImageClick = (event) => {
   return (
     <button name={name} onClick={handleClick}>
       <img src="1.jpg" alt="pics" 
-      onClick={handleImageClick}/>
+      onClick={handleImageClick}
+      style={{ width: "600px", height: "400px" }}/>
+      
       {name}
     </button>
   );

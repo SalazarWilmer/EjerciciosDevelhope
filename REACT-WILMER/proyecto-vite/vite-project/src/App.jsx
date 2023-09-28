@@ -8,6 +8,7 @@ import Clock from "./Ejercicios/Clock";
 import MouseClicker from "./Ejercicios/MouseClicker";
 import MultiButton from "./Ejercicios/MultiButton";
 import InteractiveWelcome from "./Ejercicios/InteractiveWelcome";
+import Login from "./Ejercicios/Login";
 function App() {
   const initialValue = 0;
   const incrementAmount = 5;
@@ -34,6 +35,7 @@ function App() {
       <MouseClicker name="one" />
       <MultiButton />
       <InteractiveWelcome/>
+      <Login />
     </div>
   );
 }
