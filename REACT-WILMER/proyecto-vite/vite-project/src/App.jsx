@@ -9,6 +9,7 @@ import MouseClicker from "./Ejercicios/MouseClicker";
 import MultiButton from "./Ejercicios/MultiButton";
 import InteractiveWelcome from "./Ejercicios/InteractiveWelcome";
 import Login from "./Ejercicios/Login";
+import UncontrolledLogin from "./Ejercicios/UncontrolledLogin";
 function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
@@ -39,6 +40,7 @@ function App() {
       <MultiButton />
       <InteractiveWelcome />
       <Login onLogin={handleLogin} />
+      <UncontrolledLogin onLogin={handleLogin} /> 
     </div>
   );
 }
