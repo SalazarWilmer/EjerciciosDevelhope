@@ -3,6 +3,7 @@ import Message from "./Ejercicios/Message";
 import Welcome from "./Ejercicios/Welcome";
 import Age from "./Ejercicios/Age";
 import AlertClock from "./Ejercicios/AlertClock";
+import Counter from "./Ejercicios/Counter";
 function App() {
   const handleAlertClick = (currentTime) => {
     alert(`La hora actual es: ${currentTime}`);
@@ -16,6 +17,7 @@ function App() {
       <Age age={10} />
       <Welcome name={name} age={26} />
       <AlertClock  onClickHandler={handleAlertClick}  />
+      <Counter/>
     </div>
   );
 }
