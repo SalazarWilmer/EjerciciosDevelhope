@@ -22,6 +22,11 @@ const Login = ({ onLogin }) => {
       onLogin({ username, password, remember });
     }
   };
+  const handleReset = () => {
+    setUsername("");
+    setPassword("");
+    setRemember(false);
+  };
 
   return (
     <div>
@@ -53,12 +58,10 @@ const Login = ({ onLogin }) => {
           Remember Me
         </label>
       </div>
-      <button
-        onClick={handleLogin}
-        disabled={!username || !password}
-      >
+      <button onClick={handleLogin} disabled={!username || !password}>
         Login
       </button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 };
