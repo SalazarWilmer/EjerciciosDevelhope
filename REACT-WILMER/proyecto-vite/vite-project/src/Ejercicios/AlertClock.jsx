@@ -1,7 +1,9 @@
-const AlertClock = () => {
+import React from 'react';
+
+const AlertClock = ({ onClickHandler }) => {
   const handleButtonClick = () => {
     const currentTime = new Date().toLocaleTimeString();
-    alert(`Current time is: ${currentTime}`);
+    onClickHandler(currentTime);
   };
 
   return (
@@ -12,3 +14,4 @@ const AlertClock = () => {
 };
 
 export default AlertClock;
+
