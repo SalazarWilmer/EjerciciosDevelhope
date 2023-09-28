@@ -10,6 +10,9 @@ import MultiButton from "./Ejercicios/MultiButton";
 import InteractiveWelcome from "./Ejercicios/InteractiveWelcome";
 import Login from "./Ejercicios/Login";
 function App() {
+  const handleLogin = (userData) => {
+    console.log("Login data:", userData);
+  };
   const initialValue = 0;
   const incrementAmount = 5;
   const decrementAmount = 1;
@@ -34,8 +37,8 @@ function App() {
       <Clock />
       <MouseClicker name="one" />
       <MultiButton />
-      <InteractiveWelcome/>
-      <Login />
+      <InteractiveWelcome />
+      <Login onLogin={handleLogin} />
     </div>
   );
 }

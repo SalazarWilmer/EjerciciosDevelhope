@@ -17,7 +17,8 @@ const Login = ({ onLogin }) => {
     setRemember(event.target.checked);
   };
 
-  const handleLogin = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
     if (username && password) {
       onLogin({ username, password, remember });
     }
@@ -29,7 +30,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
         <input
@@ -58,11 +59,11 @@ const Login = ({ onLogin }) => {
           Remember Me
         </label>
       </div>
-      <button onClick={handleLogin} disabled={!username || !password}>
+      <button type="submit" disabled={!username || !password}>
         Login
       </button>
-      <button onClick={handleReset}>Reset</button>
-    </div>
+      <button type="button" onClick={handleReset}>Reset</button>
+    </form>
   );
 };
 
