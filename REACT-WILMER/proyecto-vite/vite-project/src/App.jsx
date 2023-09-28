@@ -4,6 +4,7 @@ import Welcome from "./Ejercicios/Welcome";
 import Age from "./Ejercicios/Age";
 import AlertClock from "./Ejercicios/AlertClock";
 import Counter from "./Ejercicios/Counter";
+import Clock from "./Ejercicios/Clock";
 function App() {
   const initialValue = 0;
   const incrementAmount = 5;
@@ -22,6 +23,7 @@ function App() {
       <Welcome name={name} age={26} />
       <AlertClock onClickHandler={handleAlertClick} />
       <Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount}  />
+      <Clock />
     </div>
   );
 }
