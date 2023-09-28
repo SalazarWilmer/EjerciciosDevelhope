@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+const Counter = ({ initialValue, incrementAmount }) => {
+  const [counter, setCounter] = useState(initialValue);
 
   const incrementCounter = () => {
-    setCounter(counter + 1);
+    setCounter(counter + incrementAmount);
   };
 
   return (
@@ -18,7 +18,7 @@ const Counter = () => {
 export default Counter;
 
 
-/**
+/**  setCounter(counter + 1); funcion valor inmediato
  * Respuesta al ejercicio 30:
  * En este componente estamos usando una funcion de valor inmediato, tambien podriamos hacerlo con una funcion que devuelva
  * un valor que podria ser setCounter(prevCounter => prevCounter + 1), de las dos maneras se obtiene el resultado deseado, lo 

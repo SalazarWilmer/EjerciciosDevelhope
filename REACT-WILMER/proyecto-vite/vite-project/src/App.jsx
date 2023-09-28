@@ -5,6 +5,9 @@ import Age from "./Ejercicios/Age";
 import AlertClock from "./Ejercicios/AlertClock";
 import Counter from "./Ejercicios/Counter";
 function App() {
+  const initialValue = 0;
+  const incrementAmount = 5;
+
   const handleAlertClick = (currentTime) => {
     alert(`La hora actual es: ${currentTime}`);
   };
@@ -16,8 +19,8 @@ function App() {
       <Hello />
       <Age age={10} />
       <Welcome name={name} age={26} />
-      <AlertClock  onClickHandler={handleAlertClick}  />
-      <Counter/>
+      <AlertClock onClickHandler={handleAlertClick} />
+      <Counter initialValue={initialValue} incrementAmount={incrementAmount} />
     </div>
   );
 }
