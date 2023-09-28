@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CounterDisplay  from "./CounterDisplay";
 
 const Counter = ({ initialValue, incrementAmount }) => {
   const [counter, setCounter] = useState(initialValue);
@@ -9,7 +10,7 @@ const Counter = ({ initialValue, incrementAmount }) => {
 
   return (
     <div>
-      <h2>Contador: {counter}</h2>
+     <CounterDisplay count={counter} />
       <button onClick={incrementCounter}>Incrementar</button>
     </div>
   );
