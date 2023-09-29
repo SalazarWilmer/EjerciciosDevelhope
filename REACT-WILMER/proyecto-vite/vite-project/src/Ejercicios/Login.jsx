@@ -93,3 +93,19 @@ export default Login;
  * las utilicen.
  * 
  */
+
+
+/**
+ * Respuesta al ejercicio Uncontrolled Forms 49:
+ * Como puedes ver ya he utilizado FormData
+ * Podria decir que sus ventajas son:
+ * Tiene una facilidad de uso ya que esta proporciona una manera sencilla y directa de obtener los datos de un form sin tener que acceder a cada campo individualmente.
+ * El manejo de archivos ya que facilmente podemos junto con los datos del formulario manejar como por ejemplo imagenes, esto es dificil de lograr con otros enfoques.
+ * Tiene una compatibilidad con Ajax y ademas permite una flexibilidad con los nombres ya que utilizando los mismos de los campos podemos acceder a datos especificos.
+ * 
+ * En cuanto a desventajas puedo decir que:
+ * Principalmente puede que no sea compatibles con navegadores antiguos, en estos mismos puede requerir un manejo adicional para garantizar la compatibilidad.
+ * Si se necesitan procesamientos complejos o validaciones de datos antes del envío, FormData puede resultar limitada en comparación con un manejo personalizado.
+ * No ofrece métodos integrados para validar los datos antes de enviarlos, lo que significa que se debe realizar la validación manualmente antes de utilizar la API FormData.
+ * Y por ultimo puede incluir campos ocultos en el formulario que no deberían ser enviados, ya que FormData envía todos los campos del formulario.
+ */
