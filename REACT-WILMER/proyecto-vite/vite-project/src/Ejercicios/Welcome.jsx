@@ -1,4 +1,5 @@
 import Age from "./Age";
+import "../assets/index.scss"
 
 const Welcome = (props) => {
   const isAgeValid = props.age > 18 && props.age < 65;
