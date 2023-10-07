@@ -5,7 +5,7 @@ const Welcome = (props) => {
   console.log(isAgeValid);
   const isNameValid = props.name === 'John';
   return (
-    <div>
+    <div className="welcome">
       <p>Welcome, {isNameValid ? <strong>{props.name}</strong> : <strong>invitado</strong>}!</p>
      
 
@@ -13,6 +13,7 @@ const Welcome = (props) => {
     </div>
   );
 };
+export default Welcome;
 
 /**Respuesta al ejercicio 17 de props: Como podemos observar si se puede establecer
  * un valor predeterminado si no se proporciona el nombre en la variable name, de lo contrario el valor que
@@ -28,4 +29,3 @@ const Welcome = (props) => {
  * si se cumple con la condicion si es mayor de 18, agregamos esta condicion antes de llamar a nuestro componente
  * 
  */
-export default Welcome;
