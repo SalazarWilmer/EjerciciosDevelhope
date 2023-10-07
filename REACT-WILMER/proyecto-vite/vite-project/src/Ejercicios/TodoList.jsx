@@ -4,22 +4,30 @@ const TodoList = () => {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
 
-
-const handleAdditem = () => {
-  if (newItem.trim() !== "") {
-    setItems([...items, newItem]);
-    setNewItem(""); // Respuesta al ejercicio 57:
-    // Ya habia pensado en que mi componente limpiara el input al presionar el boton agregar un item
-  }
-};
-const handleResetItems = () => {
+  const handleAdditem = () => {
+    if (newItem.trim() !== "") {
+      setItems([...items, newItem]);
+      setNewItem(""); // Respuesta al ejercicio 57:
+      // Ya habia pensado en que mi componente limpiara el input al presionar el boton agregar un item
+    }
+  };
+  const handleResetItems = () => {
     setItems([]);
-}
+  };
+
+  const handleRemoveItem = (index) => {
+    const updatedItems = items.filter((_, i) => i !== index);
+    setItems(updatedItems);
+  };
+
   return (
     <div>
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            {item}
+            <button onClick={() => handleRemoveItem(index)}>Remove</button>
+          </li>
         ))}
       </ul>
       <input
