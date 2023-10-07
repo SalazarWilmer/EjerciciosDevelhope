@@ -11,6 +11,7 @@ import InteractiveWelcome from "./Ejercicios/InteractiveWelcome";
 import Login from "./Ejercicios/Login";
 import UncontrolledLogin from "./Ejercicios/UncontrolledLogin";
 import FocusableInput from "./Ejercicios/FocusableInput";
+import FirstMount from "./Ejercicios/FirstMount";
 function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
@@ -43,6 +44,7 @@ function App() {
       <Login onLogin={handleLogin} />
       <UncontrolledLogin onLogin={handleLogin} /> 
       <FocusableInput />
+      <FirstMount />
     </div>
   );
 }
