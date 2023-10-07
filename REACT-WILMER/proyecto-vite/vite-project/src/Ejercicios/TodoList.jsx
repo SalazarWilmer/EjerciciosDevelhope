@@ -12,6 +12,9 @@ const handleAdditem = () => {
     // Ya habia pensado en que mi componente limpiara el input al presionar el boton agregar un item
   }
 };
+const handleResetItems = () => {
+    setItems([]);
+}
   return (
     <div>
       <ul>
@@ -27,6 +30,7 @@ const handleAdditem = () => {
       />
 
       <button onClick={handleAdditem}>Agregar</button>
+      <button onClick={handleResetItems}>Reset</button>
     </div>
   );
 };
