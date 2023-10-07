@@ -17,28 +17,8 @@ const Login = ({ onLogin }) => {
     setRemember(event.target.checked);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-
-    const formData = new FormData(event.target);
-
-    const username = formData.get('username');
-    const password = formData.get('password');
-    const remember = formData.get('remember') === 'on';
-
-    if (username && password) {
-      onLogin({ username, password, remember });
-    }
-  };
-
-  const handleReset = () => {
-    setUsername("");
-    setPassword("");
-    setRemember(false);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(event) => event.preventDefault()}>
       <div>
         <label htmlFor="username">Username:</label>
         <input
@@ -70,10 +50,9 @@ const Login = ({ onLogin }) => {
           Remember
         </label>
       </div>
-      <button type="submit" disabled={!username || !password}>
+      <button type="submit" style={{ backgroundColor: password.length < 8 ? '#a11a1a' : 'green' }} disabled={!username || !password}>
         Login
       </button>
-      <button type="button" onClick={handleReset}>Reset</button>
     </form>
   );
 };
