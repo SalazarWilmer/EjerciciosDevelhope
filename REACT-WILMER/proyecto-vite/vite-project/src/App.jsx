@@ -12,6 +12,7 @@ import Login from "./Ejercicios/Login";
 import UncontrolledLogin from "./Ejercicios/UncontrolledLogin";
 import FocusableInput from "./Ejercicios/FocusableInput";
 import FirstMount from "./Ejercicios/FirstMount";
+import Colors from "./Ejercicios/Colors";
 function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
@@ -24,6 +25,7 @@ function App() {
     alert(`La hora actual es: ${currentTime}`);
   };
   const name = "John";
+  const colorList = ['Rojo', 'Negro', 'Dorado', 'Verde'];
   return (
     <div className="App">
       <Hello />
@@ -45,6 +47,8 @@ function App() {
       <UncontrolledLogin onLogin={handleLogin} /> 
       <FocusableInput />
       <FirstMount />
+      <h1>Lista de colores</h1>
+      <Colors items={colorList}/>
     </div>
   );
 }
