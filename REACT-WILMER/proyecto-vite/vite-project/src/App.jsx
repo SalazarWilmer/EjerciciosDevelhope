@@ -18,14 +18,19 @@ function App() {
     console.log("Login data:", userData);
   };
   const initialValue = 0;
-  const incrementAmount = 5;
+  const incrementAmount = 1;
   const decrementAmount = 1;
 
   const handleAlertClick = (currentTime) => {
     alert(`La hora actual es: ${currentTime}`);
   };
   const name = "John";
-  const colorList = ['Rojo', 'Negro', 'Dorado', 'Verde'];
+  const colorList = [
+    { id: 1, name: "Rojo" },
+    { id: 2, name: "Negro" },
+    { id: 3, name: "Dorado" },
+    { id: 4, name: "Verde" },
+  ];
   return (
     <div className="App">
       <Hello />
@@ -44,11 +49,11 @@ function App() {
       <MultiButton />
       <InteractiveWelcome />
       <Login onLogin={handleLogin} />
-      <UncontrolledLogin onLogin={handleLogin} /> 
+      <UncontrolledLogin onLogin={handleLogin} />
       <FocusableInput />
       <FirstMount />
       <h1>Lista de colores</h1>
-      <Colors items={colorList}/>
+      <Colors items={colorList} />
     </div>
   );
 }
