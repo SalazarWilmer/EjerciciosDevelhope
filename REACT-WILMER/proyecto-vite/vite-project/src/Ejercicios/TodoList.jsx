@@ -8,7 +8,8 @@ const TodoList = () => {
 const handleAdditem = () => {
   if (newItem.trim() !== "") {
     setItems([...items, newItem]);
-    setNewItem("");
+    setNewItem(""); // Respuesta al ejercicio 57:
+    // Ya habia pensado en que mi componente limpiara el input al presionar el boton agregar un item
   }
 };
   return (
