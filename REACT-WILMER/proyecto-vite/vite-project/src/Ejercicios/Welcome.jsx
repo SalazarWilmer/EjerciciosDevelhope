@@ -1,5 +1,5 @@
 import Age from "./Age";
-import "../assets/index.scss"
+import "../styles/index.scss"
 
 const Welcome = (props) => {
   const isAgeValid = props.age > 18 && props.age < 65;
@@ -14,6 +14,7 @@ const Welcome = (props) => {
     </div>
   );
 };
+
 export default Welcome;
 
 /**Respuesta al ejercicio 17 de props: Como podemos observar si se puede establecer
