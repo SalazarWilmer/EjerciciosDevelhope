@@ -28,11 +28,11 @@ const UncontrolledLogin = ({ onLogin }) => {
     <form  onSubmit={handleSubmit}>
       <div >
         <label htmlFor="usernames">Username:</label>
-        <input class="border rounded p-4 bg-pink-200" type="text" id="usernames" ref={usernameRef} />
+        <input className="border rounded p-4 bg-pink-200" type="text" id="usernames" ref={usernameRef} />
       </div>
       <div>
         <label htmlFor="password">Password:</label>
-        <input class="border rounded p-4 bg-pink-200" type="password" id="passwords" ref={passwordRef} />
+        <input className="border rounded p-4 bg-pink-200" type="password" id="passwords" ref={passwordRef} />
       </div>
       <div>
         <label>
@@ -40,8 +40,8 @@ const UncontrolledLogin = ({ onLogin }) => {
           Remember Me
         </label>
       </div>
-      <button  class="m-4 p-6 bg-blue-500 text-white" type="submit">Login</button>
-      <button class="m-4 p-6 bg-blue-500 text-white" type="button" onClick={handleReset}>
+      <button  className="m-4 p-6 bg-blue-500 text-white" type="submit">Login</button>
+      <button className="m-4 p-6 bg-blue-500 text-white" type="button" onClick={handleReset}>
         Reset
       </button>
     </form>

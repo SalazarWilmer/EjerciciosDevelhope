@@ -57,7 +57,7 @@ function App() {
       <h1>Lista de colores</h1>
       <Colors items={colorList} />
       <TodoList />
-      <Container>
+      <Container title="Mi primer Contenedor">
       <p>Contenido dentro del container :P</p>
     </Container>
     </div>
