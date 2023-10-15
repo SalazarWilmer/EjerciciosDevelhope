@@ -36,3 +36,23 @@
     border: 1px dashed red;
     background-color: white;
   }
+
+.github-users-list {
+  list-style-type: none;
+  padding: 0;
+  background-color: #206c423a;
+}
+
+.github-users-list-item {
+  margin-bottom: 10px;
+}
+
+.github-users-list-item a {
+  color: #332267;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.github-users-list-item a:hover {
+  text-decoration: underline;
+}

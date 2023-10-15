@@ -19,6 +19,7 @@ import Container from "./Ejercicios/Container";
 import { LanguageProvider } from "./Ejercicios/LanguageContext"
 import LanguageSelector from './Ejercicios/LanguageSelector';
 import GithubUser from './Ejercicios/GithubUser';
+import GithubUsers from './Ejercicios/GithubUsers';
 
 function App() {
   const handleLogin = (userData) => {
@@ -78,6 +79,8 @@ function App() {
       </Container>
 
       <GithubUser username="SalazarWilmer" />
+
+      <GithubUsers />
     </div>
   );
 }
