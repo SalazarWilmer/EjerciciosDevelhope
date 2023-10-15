@@ -39,3 +39,9 @@ const Clock = () => {
 };
 
 export default Clock;
+
+
+/**
+ * Respuesta al Ejercicio Context 72=
+ * Si eliminino al Context provider en este componente entonces no tendria acceso al contexto Language y esto devolvera undefined entonces.
+ */
