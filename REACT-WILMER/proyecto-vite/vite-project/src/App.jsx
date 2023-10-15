@@ -13,7 +13,8 @@ import UncontrolledLogin from "./Ejercicios/UncontrolledLogin";
 import FocusableInput from "./Ejercicios/FocusableInput";
 import FirstMount from "./Ejercicios/FirstMount";
 import Colors from "./Ejercicios/Colors";
-import TodoList from "./Ejercicios/TodoList"
+import TodoList from "./Ejercicios/TodoList";
+import Container from "./Ejercicios/Container"
 function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
@@ -56,6 +57,9 @@ function App() {
       <h1>Lista de colores</h1>
       <Colors items={colorList} />
       <TodoList />
+      <Container>
+      <p>Contenido dentro del container :P</p>
+    </Container>
     </div>
   );
 }
