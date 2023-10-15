@@ -25,9 +25,9 @@ function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
   };
-  const initialValue = 0;
-  const incrementAmount = 1;
-  const decrementAmount = 1;
+  const initialValue = 500;
+  const incrementAmount = 50;
+  const decrementAmount = 50;
 
   const handleAlertClick = (currentTime) => {
     alert(`La hora actual es: ${currentTime}`);
