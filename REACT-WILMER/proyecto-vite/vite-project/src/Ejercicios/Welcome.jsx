@@ -3,7 +3,7 @@ import "../styles/index.scss"
 
 const Welcome = (props) => {
   const isAgeValid = props.age > 18 && props.age < 65;
-  console.log(isAgeValid);
+  // console.log(isAgeValid);
   const isNameValid = props.name === 'John';
   return (
     <div className="welcome">

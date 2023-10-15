@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useContext } from 'react';
 import Hello from "./Ejercicios/Hello";
 import Message from "./Ejercicios/Message";
 import Welcome from "./Ejercicios/Welcome";
@@ -14,7 +15,10 @@ import FocusableInput from "./Ejercicios/FocusableInput";
 import FirstMount from "./Ejercicios/FirstMount";
 import Colors from "./Ejercicios/Colors";
 import TodoList from "./Ejercicios/TodoList";
-import Container from "./Ejercicios/Container"
+import Container from "./Ejercicios/Container";
+import { LanguageProvider } from "./Ejercicios/LanguageContext"
+import LanguageSelector from './Ejercicios/LanguageSelector';
+
 function App() {
   const handleLogin = (userData) => {
     console.log("Login data:", userData);
@@ -33,8 +37,20 @@ function App() {
     { id: 3, name: "Dorado" },
     { id: 4, name: "Verde" },
   ];
+
+  const [language, setLanguage] = useState('en');
+
+  const handleLanguageChange = (event) => {
+    console.log('Selected language:', event.target.value);
+    setLanguage(event.target.value);
+  };
+  
   return (
     <div className="App">
+      <LanguageProvider value={language}>
+        <LanguageSelector />
+        <Clock />
+      </LanguageProvider>
       <Hello />
       <Message />
       <Hello />
@@ -46,7 +62,6 @@ function App() {
         incrementAmount={incrementAmount}
         decrementAmount={decrementAmount}
       />
-      <Clock />
       <MouseClicker name="one" />
       <MultiButton />
       <InteractiveWelcome />
@@ -58,8 +73,8 @@ function App() {
       <Colors items={colorList} />
       <TodoList />
       <Container title="Mi primer Contenedor">
-      <p>Contenido dentro del container :P</p>
-    </Container>
+        <p>Contenido dentro del container :P</p>
+      </Container>
     </div>
   );
 }

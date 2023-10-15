@@ -1,6 +1,6 @@
 import Color from './Color';
 const Colors = ({items}) => {
-    console.log('Contenido del componente Colors:', items);
+    // console.log('Contenido del componente Colors:', items);
     return (
         <ul>
             {items.map((color) => (
