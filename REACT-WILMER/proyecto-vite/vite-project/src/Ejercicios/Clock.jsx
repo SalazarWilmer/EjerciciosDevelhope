@@ -22,7 +22,7 @@ const Clock = () => {
 
 
   const getTimeInLanguage = () => {
-    const options = { hour12: true, hour: '2-digit', minute: '2-digit' };
+    const options = { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' };
 
     if (language === 'es') {
       return 'Hola Actual: ' + currentTime.toLocaleTimeString('es-ES', options);
