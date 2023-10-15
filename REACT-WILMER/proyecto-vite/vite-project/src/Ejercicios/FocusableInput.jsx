@@ -8,6 +8,18 @@ const FocusableInput = () => {
       inputRef.current.focus();
     }
   }, []);
-  return <input ref={inputRef} type="text" />;
+  return (
+    <div className="form-group">
+      <label htmlFor="textInput">Input:</label>
+      <input
+        ref={inputRef}
+        type="text"
+        className="form-control"
+        id="textInput"
+        placeholder="Enter text"
+      />
+    </div>
+  );
 };
+
 export default FocusableInput;
