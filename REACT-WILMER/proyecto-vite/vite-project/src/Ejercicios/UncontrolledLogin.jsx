@@ -24,23 +24,23 @@ const UncontrolledLogin = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form  onSubmit={handleSubmit}>
+      <div >
         <label htmlFor="usernames">Username:</label>
-        <input type="text" id="usernames" ref={usernameRef} />
+        <input class="border rounded p-4 bg-pink-200" type="text" id="usernames" ref={usernameRef} />
       </div>
       <div>
         <label htmlFor="password">Password:</label>
-        <input type="password" id="passwords" ref={passwordRef} />
+        <input class="border rounded p-4 bg-pink-200" type="password" id="passwords" ref={passwordRef} />
       </div>
       <div>
         <label>
-          <input type="checkbox" ref={rememberRef} />
+          <input  type="checkbox" ref={rememberRef} />
           Remember Me
         </label>
       </div>
-      <button type="submit">Login</button>
-      <button type="button" onClick={handleReset}>
+      <button  class="m-4 p-6 bg-blue-500 text-white" type="submit">Login</button>
+      <button class="m-4 p-6 bg-blue-500 text-white" type="button" onClick={handleReset}>
         Reset
       </button>
     </form>
