@@ -47,7 +47,7 @@ function App() {
     console.log("Selected language:", event.target.value);
     setLanguage(event.target.value);
   };
-
+  const username = 'SalazarWilmer';
   return (
     <div className="App">
       <LanguageProvider value={language}>
@@ -79,7 +79,7 @@ function App() {
         <p>Contenido dentro del container :P</p>
       </Container>
 
-      <GithubUser username="SalazarWilmer" />
+      <GithubUser username={username} />
 
       <GithubUsers />
 
