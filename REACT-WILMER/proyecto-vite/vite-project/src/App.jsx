@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import Hello from "./Ejercicios/Hello";
 import Message from "./Ejercicios/Message";
 import Welcome from "./Ejercicios/Welcome";
@@ -16,10 +16,11 @@ import FirstMount from "./Ejercicios/FirstMount";
 import Colors from "./Ejercicios/Colors";
 import TodoList from "./Ejercicios/TodoList";
 import Container from "./Ejercicios/Container";
-import { LanguageProvider } from "./Ejercicios/LanguageContext"
-import LanguageSelector from './Ejercicios/LanguageSelector';
-import GithubUser from './Ejercicios/GithubUser';
-import GithubUsers from './Ejercicios/GithubUsers';
+import { LanguageProvider } from "./Ejercicios/LanguageContext";
+import LanguageSelector from "./Ejercicios/LanguageSelector";
+import GithubUser from "./Ejercicios/GithubUser";
+import GithubUsers from "./Ejercicios/GithubUsers";
+import LoginForm from "./Ejercicios/LoginForm";
 
 function App() {
   const handleLogin = (userData) => {
@@ -40,13 +41,13 @@ function App() {
     { id: 4, name: "Verde" },
   ];
 
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState("en");
 
   const handleLanguageChange = (event) => {
-    console.log('Selected language:', event.target.value);
+    console.log("Selected language:", event.target.value);
     setLanguage(event.target.value);
   };
-  
+
   return (
     <div className="App">
       <LanguageProvider value={language}>
@@ -81,6 +82,8 @@ function App() {
       <GithubUser username="SalazarWilmer" />
 
       <GithubUsers />
+
+      <LoginForm onLogin={handleLogin} />
     </div>
   );
 }
