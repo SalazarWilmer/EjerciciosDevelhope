@@ -56,3 +56,8 @@
 .github-users-list-item a:hover {
   text-decoration: underline;
 }
+
+.button-container {
+  display: flex;
+  gap: 10px; 
+}

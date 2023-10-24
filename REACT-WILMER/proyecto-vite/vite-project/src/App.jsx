@@ -21,6 +21,7 @@ import LanguageSelector from "./Ejercicios/LanguageSelector";
 import GithubUser from "./Ejercicios/GithubUser";
 import GithubUsers from "./Ejercicios/GithubUsers";
 import LoginForm from "./Ejercicios/LoginForm";
+import CurrentLocation from "./Ejercicios/CurrentLocation";
 
 function App() {
   const handleLogin = (userData) => {
@@ -84,6 +85,8 @@ function App() {
       <GithubUsers />
 
       <LoginForm onLogin={handleLogin} />
+
+      <CurrentLocation />
     </div>
   );
 }
