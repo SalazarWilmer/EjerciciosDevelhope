@@ -22,6 +22,7 @@ import GithubUser from "./Ejercicios/GithubUser";
 import GithubUsers from "./Ejercicios/GithubUsers";
 import LoginForm from "./Ejercicios/LoginForm";
 import CurrentLocation from "./Ejercicios/CurrentLocation";
+import FilteredList from "./Ejercicios/FilteredList";
 
 function App() {
   const handleLogin = (userData) => {
@@ -49,6 +50,14 @@ function App() {
     setLanguage(event.target.value);
   };
   const username = 'SalazarWilmer';
+
+  const studentsList = [
+    { id: 1, name: 'Ben', age: 20 },
+    { id: 2, name: 'Robert', age: 25 },
+    { id: 3, name: 'Jack', age: 17 },
+    { id: 3, name: 'Wilson', age: 19 },
+
+  ];
   return (
     <div className="App">
       <LanguageProvider value={language}>
@@ -87,6 +96,8 @@ function App() {
       <LoginForm onLogin={handleLogin} />
 
       <CurrentLocation />
+
+      <FilteredList list={studentsList} />
     </div>
   );
 }
