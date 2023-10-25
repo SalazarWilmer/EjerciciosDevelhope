@@ -6,6 +6,7 @@ import "../styles/index.scss"
 const GithubUsers = () => {
   const [usernames, setUsernames] = useState([]);
   const [selectedUsername, setSelectedUsername] = useState(null);
+  const [inputUsername, setInputUsername] = useState("");
 
   useEffect(() => {
     const fetchUsernames = async () => {
@@ -25,9 +26,25 @@ const GithubUsers = () => {
     setSelectedUsername(username);
   };
 
+  const handleInputChange = (event) => {
+    setInputUsername(event.target.value);
+  };
+
+  const handleFetchUser = () => {
+    if (inputUsername) {
+      setSelectedUsername(inputUsername);
+    }
+  };
   return (
     <div>
       <h2>Lista de Usuarios de Github</h2>
+      <input
+        type="text"
+        placeholder="Enter a GitHub username"
+        value={inputUsername}
+        onChange={handleInputChange}
+      />
+      <button onClick={handleFetchUser}>Fetch User</button>
       <ul className="github-users-list"> 
         {usernames.map((username, index) => (
           <li key={index} className="github-users-list-item"> 
@@ -35,9 +52,10 @@ const GithubUsers = () => {
           </li>
         ))}
       </ul>
-      {selectedUsername && <GithubUser username={selectedUsername} />}
+      {selectedUsername ? <GithubUser username={selectedUsername} /> : <p>Add a user and select it</p>}
     </div>
   );
 };
+
 
 export default GithubUsers;

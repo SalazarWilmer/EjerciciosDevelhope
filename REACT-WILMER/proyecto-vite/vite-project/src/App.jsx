@@ -67,7 +67,9 @@ function App() {
             />
           }
         />
-        <Route path="/users/*" element={<GithubUsers />} />
+        <Route path="/users" element={<GithubUsers />}>
+          <Route index element={<p>Add a user and select it</p>} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
