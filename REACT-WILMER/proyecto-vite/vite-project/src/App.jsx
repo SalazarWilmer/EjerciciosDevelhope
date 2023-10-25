@@ -3,7 +3,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import Welcome from "./Ejercicios/Welcome";
 import Counter from "./Ejercicios/Counter";
 import ShowGithubUser from "./Ejercicios/ShowGithubUser";
-import "./styles/index.scss"
+import NotFound from "./Ejercicios/NotFound";
+import "./styles/index.scss";
 
 function App() {
   // const handleLogin = (userData) => {
@@ -56,8 +57,18 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Welcome name="John" age={30} />} />
-        <Route path="/counter" element={<Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount} />} />
+        <Route
+          path="/counter"
+          element={
+            <Counter
+              initialValue={initialValue}
+              incrementAmount={incrementAmount}
+              decrementAmount={decrementAmount}
+            />
+          }
+        />
         <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
