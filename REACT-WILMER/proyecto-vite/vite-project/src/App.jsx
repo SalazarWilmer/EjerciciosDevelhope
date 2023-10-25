@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Welcome from "./Ejercicios/Welcome";
 import Counter from "./Ejercicios/Counter";
-import ShowGithubUser from "./Ejercicios/ShowGithubUser";
+import GithubUsers from "./Ejercicios/GithubUsers";
 import NotFound from "./Ejercicios/NotFound";
 import "./styles/index.scss";
 
@@ -31,7 +31,7 @@ function App() {
   //   console.log("Selected language:", event.target.value);
   //   setLanguage(event.target.value);
   // };
-  const username = "SalazarWilmer";
+  // const username = "SalazarWilmer";
 
   // const studentsList = [
   //   { id: 1, name: "Ben", age: 20 },
@@ -50,7 +50,7 @@ function App() {
             <Link to="/counter">Counter</Link>
           </li>
           <li>
-            <Link to="/users/SalazarWilmer">Show Github User</Link>
+            <Link to="/users">Show Github Users</Link>
           </li>
         </ul>
       </nav>
@@ -67,7 +67,7 @@ function App() {
             />
           }
         />
-        <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="/users/*" element={<GithubUsers />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
