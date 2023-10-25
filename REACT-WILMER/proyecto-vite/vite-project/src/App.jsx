@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import { SWRConfig } from 'swr';
 import Welcome from "./Ejercicios/Welcome";
 import Counter from "./Ejercicios/Counter";
 import GithubUsers from "./Ejercicios/GithubUsers";
@@ -41,37 +42,44 @@ function App() {
   // ];
   return (
     <div className="App">
-      <nav className="navbar">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/counter">Counter</Link>
-          </li>
-          <li>
-            <Link to="/users">Show Github Users</Link>
-          </li>
-        </ul>
-      </nav>
+      <SWRConfig
+        value={{
+          fetcher: (url) => fetch(url).then((res) => res.json()), // Valor predeterminado para el fetcher
+          // Puedes establecer más opciones globales aquí
+        }}
+      >
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/counter">Counter</Link>
+            </li>
+            <li>
+              <Link to="/users">Show Github Users</Link>
+            </li>
+          </ul>
+        </nav>
 
-      <Routes>
-        <Route path="/" element={<Welcome name="John" age={30} />} />
-        <Route
-          path="/counter"
-          element={
-            <Counter
-              initialValue={initialValue}
-              incrementAmount={incrementAmount}
-              decrementAmount={decrementAmount}
-            />
-          }
-        />
-        <Route path="/users" element={<GithubUsers />}>
-          <Route index element={<p>Add a user and select it</p>} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Welcome name="John" age={30} />} />
+          <Route
+            path="/counter"
+            element={
+              <Counter
+                initialValue={initialValue}
+                incrementAmount={incrementAmount}
+                decrementAmount={decrementAmount}
+              />
+            }
+          />
+          <Route path="/users" element={<GithubUsers />}>
+            <Route index element={<p>Add a user and select it</p>} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </SWRConfig>
     </div>
   );
 }
