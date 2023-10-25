@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./Ejercicios/Welcome";
 import Counter from "./Ejercicios/Counter";
+import ShowGithubUser from "./Ejercicios/ShowGithubUser";
 
 function App() {
   // const handleLogin = (userData) => {
@@ -28,7 +29,7 @@ function App() {
   //   console.log("Selected language:", event.target.value);
   //   setLanguage(event.target.value);
   // };
-  // const username = "SalazarWilmer";
+  const username = "SalazarWilmer";
 
   // const studentsList = [
   //   { id: 1, name: "Ben", age: 20 },
@@ -41,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome name="John" age={30} />} />
         <Route path="/counter" element={<Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount}/>} />
+        <Route path="/users/:username" element={<ShowGithubUser />} />
       </Routes>
     </div>
   );
