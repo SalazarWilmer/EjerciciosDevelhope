@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Welcome from "./Ejercicios/Welcome";
 import Counter from "./Ejercicios/Counter";
 import ShowGithubUser from "./Ejercicios/ShowGithubUser";
+import "./styles/index.scss"
 
 function App() {
   // const handleLogin = (userData) => {
@@ -39,9 +40,23 @@ function App() {
   // ];
   return (
     <div className="App">
+      <nav className="navbar">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/counter">Counter</Link>
+          </li>
+          <li>
+            <Link to="/users/SalazarWilmer">Show Github User</Link>
+          </li>
+        </ul>
+      </nav>
+
       <Routes>
         <Route path="/" element={<Welcome name="John" age={30} />} />
-        <Route path="/counter" element={<Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount}/>} />
+        <Route path="/counter" element={<Counter initialValue={initialValue} incrementAmount={incrementAmount} decrementAmount={decrementAmount} />} />
         <Route path="/users/:username" element={<ShowGithubUser />} />
       </Routes>
     </div>
