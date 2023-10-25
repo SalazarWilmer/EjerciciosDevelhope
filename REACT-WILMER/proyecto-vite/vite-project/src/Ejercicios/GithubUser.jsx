@@ -2,7 +2,7 @@ import React from 'react';
 import useGithubUser from './useGithubUser';
 
 const GithubUser = ({ username }) => {
-  const { user, loading, error, fetchUserData } = useGithubUser(username);
+  const { user, loading, error } = useGithubUser(username);
 
   if (loading) {
     return <p>Cargando...</p>;
@@ -22,7 +22,6 @@ const GithubUser = ({ username }) => {
       <img src={user.avatar_url} alt={`Avatar de ${user.login}`} />
       {user.name && <p>Nombre: {user.name}</p>}
       <p>Login: {user.login}</p>
-      <button onClick={() => fetchUserData(username)}>Obtener datos del usuario</button>
     </div>
   );
 };
