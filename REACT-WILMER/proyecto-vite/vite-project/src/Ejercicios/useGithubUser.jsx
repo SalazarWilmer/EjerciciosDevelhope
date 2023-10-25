@@ -1,9 +1,12 @@
 import useSWR from 'swr';
 
 const fetchGithubUser = (username) => {
-  return fetch(`https://api.github.com/users/${username}`).then((res) =>
-    res.json()
-  );
+  if (username) {
+    return fetch(`https://api.github.com/users/${username}`).then((res) =>
+      res.json()
+    );
+  }
+  return null; 
 };
 
 const useGithubUser = (username) => {
