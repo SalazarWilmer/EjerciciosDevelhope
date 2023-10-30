@@ -40,7 +40,7 @@ const UncontrolledLogin = ({ onLogin }) => {
           Remember Me
         </label>
       </div>
-      <button  className="m-4 p-6 bg-blue-500 text-white" type="submit">Login</button>
+      <button  className="m-4 p-6 bg-blue-500 text-pink" type="submit">Login</button>
       <button className="m-4 p-6 bg-blue-500 text-white" type="button" onClick={handleReset}>
         Reset
       </button>

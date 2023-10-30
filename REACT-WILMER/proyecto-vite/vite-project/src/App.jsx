@@ -6,11 +6,12 @@ import Counter from "./Ejercicios/Counter";
 import GithubUsers from "./Ejercicios/GithubUsers";
 import NotFound from "./Ejercicios/NotFound";
 import "./styles/index.scss";
+import UncontrolledLogin from "./Ejercicios/UncontrolledLogin";
 
 function App() {
-  // const handleLogin = (userData) => {
-  //   console.log("Login data:", userData);
-  // };
+  const handleLogin = (userData) => {
+    console.log("Login data:", userData);
+  };
   const initialValue = 500;
   const incrementAmount = 50;
   const decrementAmount = 50;
@@ -44,8 +45,7 @@ function App() {
     <div className="App">
       <SWRConfig
         value={{
-          fetcher: (url) => fetch(url).then((res) => res.json()), // Valor predeterminado para el fetcher
-          // Puedes establecer más opciones globales aquí
+          fetcher: (url) => fetch(url).then((res) => res.json()), 
         }}
       >
         <nav className="navbar">
@@ -58,6 +58,9 @@ function App() {
             </li>
             <li>
               <Link to="/users">Show Github Users</Link>
+            </li>
+            <li>
+              <Link to="/uncontrolledLogin">Login</Link>
             </li>
           </ul>
         </nav>
@@ -77,6 +80,7 @@ function App() {
           <Route path="/users" element={<GithubUsers />}>
             <Route index element={<p>Add a user and select it</p>} />
           </Route>
+          <Route path="/uncontrolledLogin" element={<UncontrolledLogin onLogin={handleLogin} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </SWRConfig>
