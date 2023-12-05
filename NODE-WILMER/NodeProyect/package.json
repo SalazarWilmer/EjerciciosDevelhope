@@ -23,7 +23,8 @@
     "joi": "^17.11.0",
     "joi-to-typescript": "^4.10.0",
     "joy": "^0.1.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg-promise": "^11.5.4"
   },
   "devDependencies": {
     "@tsconfig/node18": "^1.0.3",
