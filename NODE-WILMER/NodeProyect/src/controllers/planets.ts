@@ -12,7 +12,8 @@ const setupDb = async () => {
 
       CREATE TABLE planets (
       id SERIAL NOT NULL PRIMARY KEY,
-      name TEXT NOT NULL
+      name TEXT NOT NULL,
+      image TEXT 
     );
     `);
   await db.none(`INSERT  INTO planets (name) VALUES ('Earth')`);
@@ -47,7 +48,8 @@ const create = async (req: Request, res: Response) => {
   if (validationResult.error) {
     return res.status(400).json({ error: validationResult.error.message });
   } else {
-    await db.none(`INSERT INTO planets (name) VALUES ($1) `, name);
+    await db.none(`INSERT INTO planets (name) VALUES ($1)`, [name]);
+
     res.status(201).json({ msg: "El nuevo planeta fue creado." });
   }
 };
@@ -62,8 +64,20 @@ const updateById = async (req: Request, res: Response) => {
 };
 const deleteById = async (req: Request, res: Response) => {
   const { id } = req.params;
-  await db.none(`DELETE FROM planets WHERE id=$1`, Number(id))
+  await db.none(`DELETE FROM planets WHERE id=$1`, Number(id));
   res.status(200).json({ msg: "El planeta fue eliminado." });
 };
 
-export { getALL, getOneById, create, updateById, deleteById };
+const createImage = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const fileName = req.file?.path;
+
+  if (fileName) {
+    await db.none(`UPDATE planets SET image=$2 WHERE id=$1`, [id, fileName]);
+    res.status(201).json({ msg: "Imagen del planeta subida exitosamente." });
+  } else {
+    res.status(400).json({ msg: "Imagen del Planeta fallo la subida" });
+  }
+};
+
+export { getALL, getOneById, create, updateById, deleteById, createImage };
