@@ -1,26 +1,7 @@
 import { Request, Response } from "express";
-import pgPromise from "pg-promise";
 import Joi from "joi";
+import {db} from "./../db.js"
 
-const db = pgPromise()("postgres1://postgres:postgres@localhost:5432/video");
-
-console.log(db);
-
-const setupDb = async () => {
-  await db.none(`
-  DROP TABLE IF EXISTS planets;
-
-      CREATE TABLE planets (
-      id SERIAL NOT NULL PRIMARY KEY,
-      name TEXT NOT NULL,
-      image TEXT 
-    );
-    `);
-  await db.none(`INSERT  INTO planets (name) VALUES ('Earth')`);
-  await db.none(`INSERT  INTO planets (name) VALUES ('Mars')`);
-  await db.none(`INSERT  INTO planets (name) VALUES ('Jupiter')`);
-};
-setupDb();
 
 const getALL = async (req: Request, res: Response) => {
   const planets = await db.many(`SELECT * FROM planets;`);
